@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load bootstrap_tags %}
+
+{% block content %}
+    
+    
+<div class="row">
+    
+    <div class="col-md-6">
+    <img height="500" width="500" src="{{ MEDIA_URL }}{{ doctor.image }}">
+    </div>
+    <div class="col-md-6">
+    <h1>{{ doctor.name }}</h1>
+      <p>{{ doctor.description }}</p>
+     <p>{{ doctor.price }}</p>
+     <p>{{ doctor.location }}</p>
+     </div>
+                    <!--<form method="post" action="#">-->
+                    <!--    {% csrf_token %}-->
+                    <!--    Quantity-->
+                    <!--    <input name='quantity' type="number" min="1" max="999">-->
+                    <!--    <button type="submit">Add</button>-->
+                    <!--</form>-->
+                    
+</div>
+{% endblock %}
