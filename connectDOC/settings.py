@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'accounts',
     'search',
     'medicalPractice',
+    'checkout',
+    'booking',
 ]
 
 MIDDLEWARE = [
@@ -142,3 +144,15 @@ GEOPOSITION_GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY')
 
 
 
+
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET_KEY')
+
+
+# SYSTEM_EMAIL="sales@djangomango.com"
+
+# EMAIL_USE_TLS = True       
+# EMAIL_HOST = 'smtp.gmail.com'      
+# EMAIL_PORT = 587     
+# EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')     
+# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')

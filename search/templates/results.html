@@ -17,14 +17,14 @@
                 <td><a href="{% url 'practice_details' practice.id %}">{{ practice.name }}</a></td>
                 <td>{{ practice.description }}</td>
                 <td>{{ practice.price }}</td>
-                <!--<td>-->
-                <!--    <form method="post" action="#">-->
-                <!--        {% csrf_token %}-->
-                <!--        Quantity-->
-                <!--        <input name='quantity' type="number" min="1" max="999">-->
-                <!--        <button type="submit">Add</button>-->
-                <!--    </form>-->
-                <!--</td>-->
+                <td>
+                    <form method="post" action="{% url 'checkout' %}">
+                        {% csrf_token %}
+                        Quantity
+                        <input name='quantity' type="number" min="1" max="999">
+                        <button type="submit">Add</button>
+                    </form>
+                </td>
             </tr>
         {% endfor %}
         </tbody>

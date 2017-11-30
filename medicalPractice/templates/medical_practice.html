@@ -20,14 +20,14 @@
                 <td>{{ doctor.price }}</td>
                 <td>{{ doctor.practice }}</td>
                 
-                <td>
-                    <form method="post" action="#">
-                        {% csrf_token %}
-                        Quantity
-                        <input name='quantity' type="number" min="1" max="999">
-                        <button type="submit">Add</button>
-                    </form>
-                </td>
+                <!--<td>-->
+                <!--    <form method="post" action="#">-->
+                <!--        {% csrf_token %}-->
+                <!--        Quantity-->
+                <!--        <input name='quantity' type="number" min="1" max="999">-->
+                <!--        <button type="submit">Add</button>-->
+                <!--    </form>-->
+                <!--</td>-->
             </tr>
         {% endfor %}
         </tbody>
