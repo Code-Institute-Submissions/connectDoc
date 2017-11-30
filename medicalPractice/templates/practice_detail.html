@@ -16,7 +16,7 @@
      <p>{{ doctor.location }}</p>
      </div>
      
-     <a href="{% url 'book_appointment' %}" class="btn-success btn-lg">Book Appointment Now</a>
+     <a href="{% url 'booking' doctor.id %}" class="btn-success btn-lg">Book Appointment Now</a>
                     <!--<form method="post" action="#">-->
                     <!--    {% csrf_token %}-->
                     <!--    Quantity-->
