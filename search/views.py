@@ -2,11 +2,12 @@
 from django.shortcuts import render
 from django.db.models import Q
 
-from medicalPractice.models import Doctor
+from medicalPractice.models import Doctor, MedicalPractice
  
-def do_search(self, request, search_text, format=None, **kwargs):
-        medicalPractice = Doctor.objects.filter(search_tags__contains=search_text==request.GET['search_box']) | Q(auto_tags__contains=search_text)
-        return render(request, "results.html", {"medicalPractice": medicalPractice})
+def do_search(request):
+    practices = MedicalPractice.objects.filter(name__icontains=request.GET['search_box'])
+    doctors = Doctor.objects.filter(name__icontains=request.GET['search_box'])
+    return render(request, "results.html", {"practices": practices,"doctors": doctors})
     
 def your_view(request):
     if request.method == 'GET': search_query = request.GET('search_box', None)

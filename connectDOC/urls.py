@@ -23,6 +23,8 @@ from medicalPractice import urls as urls_medicalPractice
 from medicalPractice.views import all_doctors
 from checkout import urls as urls_checkout
 from booking import urls as urls_booking
+from search import urls as urls_search
+from search.views import do_search
 
 
 
@@ -31,6 +33,7 @@ urlpatterns = [
     url(r'^$', all_doctors, name='index'),
     url(r'^accounts/' ,include(accounts_urls)),
     url(r'^doctor/', include(urls_medicalPractice)),
+    url(r'^search/', do_search, name='search'),
     url(r'^checkout/', include(urls_checkout)),
     url(r'^media/(?P<path>.*)$', static.serve,{'document_root': MEDIA_ROOT}),
 
