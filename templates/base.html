@@ -29,7 +29,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">New Post</a></li>
+                <li> <a href={% url 'login' %}>Log In</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false"><span><img src="{{ MEDIA_URL }}{{ request.user.profile.image }}"
@@ -44,8 +44,8 @@
                             
                             {% else %}
 
-                            <li> <a href={% url 'login' %}>Log In</a></li>
-                            <li><a href={% url 'register' %}>Register</a></li>
+                            <li> <a href={% url 'register' %}>Register as Doctor</a></li>
+                            <li><a href={% url 'register' %}>Register as Patient</a></li>
                             {% endif %}
 
                     </ul>
@@ -59,14 +59,14 @@
 <div id="masthead">
     <div class="container">
         <div class="row">
-            <div class='col-md-offset-3 col-md-7'>
-            <h2> Where Doctors & Patients connect </h2>
-            </div>
+            <div class='col-md-offset-4 col-md-8'>
+            <h4><em> Where Doctors & Patients connect </em></h4>
+        </div>
 
-              <div class='col-md-offset-4 col-md-6'>
-            <p id="logo" class="lead">Book your appointment online</p> 
+
+              <div class='col-md-offset-3 col-md-9'>
+            <h2> <strong> Book your appointment online</strong></h1> 
             </div>  
-            
         </div>
     </div>
 </div>
@@ -94,9 +94,9 @@
 
     <div class="container">
         <div class='row'>
-            <div class='col-md-offset-4 col-md-4'>
-        <form action="{% url 'search' %}" method="get" style="margin: 0">
-            <input id ="search_box" type='text' name="search_box" placeholder="Search Clinic, Doctor, Location... ">
+            <div class='col-md-offset-3 col-md-9'>
+        <form action="{% url 'search' %}" method="get" style="margin: 10">
+            <input id ="search_box" type='text' name="search_box" style="width:500px; height: 30px;" placeholder="Search Clinic, Doctor, Location... ">
             <button type="submit">Search</button>
         </form>
         </div>
