@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Price</th>
+            <th>Schedule</th>
+        </tr>
+        </thead>
+        <tbody>
+            
+        {% for practice in clinics %}
+            <tr>
+                <td><img height="100" width="100" src="http://via.placeholder.com/100x100"></td>
+                <td><a href="{% url 'clinic' practice.id %}">{{ practice.name }}</a></td>
+                <td>{{ practice.description }}</td>
+                <td>{{ practice.address }}</td>
+                <td>{{ practice.price }}</td>
+                <td>
+                        <a href="{% url 'clinic' practice.id %}" type="submit" class="btn btn-primary">View Clinic</a>
+                       
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+
