@@ -11,12 +11,13 @@
     </div>
     <div class="col-md-6">
     <h1>{{ doctor.name }}</h1>
+    <p>Part of <a href="{% url 'clinic' doctor.practice.id %}">{{ doctor.practice.name }}</a></p>
       <p>{{ doctor.description }}</p>
      <p>{{ doctor.price }}</p>
      <p>{{ doctor.location }}</p>
      </div>
      
-     <a href="{% url 'booking' doctor.id %}" class="btn-success btn-lg">Book Appointment Now</a>
+     <a href="{% url 'booking' doctor.id %}" class="btn btn-primary">Book Appointment Now</a>
                     <!--<form method="post" action="#">-->
                     <!--    {% csrf_token %}-->
                     <!--    Quantity-->

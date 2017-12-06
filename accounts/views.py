@@ -2,6 +2,8 @@
 from django.shortcuts import render, redirect, reverse, HttpResponseRedirect
 from django.contrib import messages, auth
 from .forms import UserLoginForm, UserRegistrationForm
+from medicalPractice.forms import DoctorRegistrationForm, PatientRegistrationForm
+from medicalPractice.models import Doctor, Patient
 from django.contrib.auth.decorators import login_required
 # from blog.views import blogposts
 
@@ -46,9 +48,32 @@ def login(request):
     
     return render(request, "login.html", {'form': form})
 
-def register(request):
+def registerDoctor(request):
     if request.method=="POST":
         form = UserRegistrationForm(request.POST)
+        typeForm = DoctorRegistrationForm(request.POST)
+        
+        if typeForm.is_valid():
+            user = userForm.save()
+            doctor = typeForm.save(commit=False)
+            doctor.user = user
+            doctor.save()
+            
+            user = auth.authenticate(username=form.cleaned_data['username'],
+                                     password=form.cleaned_data['password1'])
+    
+            if user is not None:
+                auth.login(request, user)
+                return redirect("index")
+    else:
+        form= UserRegistrationForm()
+        typeForm = DoctorRegistrationForm()
+    
+    return render(request, "registerDoctor.html", {'form': form, 'typeForm': typeForm})
+    
+def registerPatient(request):
+    if request.method=="POST":
+        form = UserPatientRegistrationForm(request.POST)
         
         if form.is_valid():
             user = form.save()
@@ -60,9 +85,10 @@ def register(request):
                 auth.login(request, user)
                 return redirect("index")
     else:
-        form = UserRegistrationForm()
+        userForm= UserRegistrationForm()
+        typeForm = PatientRegistrationForm()
     
-    return render(request, "register.html", {'form': form})
+    return render(request, "register.html", {'userForm': userForm, 'typeForm': typeForm})
     
 @login_required()
 def profile(request):

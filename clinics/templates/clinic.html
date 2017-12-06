@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+    
+<div class="row">
+    
+    <div class="col-md-6">
+    <!--<img height="500" width="500" src="{{ MEDIA_URL }}{{ clinic.image }}">-->
+    </div>
+    <div class="col-md-6">
+    <h1>{{ clinic.name }}</h1>
+
+     <p>{{ clinic.address }}</p>
+     </div>
+     
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h4>List of doctors at this practice</h4>
+        
+        {% for doctor in clinic.doctors.all %}
+            
+            <h5><a href="{% url 'practice_details' doctor.id  %}"> {{ doctor.name }}</a></h5>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+

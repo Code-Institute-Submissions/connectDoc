@@ -1,16 +1,24 @@
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 
 from medicalPractice.models import Doctor, MedicalPractice
  
 def do_search(request):
-    practices = MedicalPractice.objects.filter(name__icontains=request.GET['search_box'])
-    doctors = Doctor.objects.filter(name__icontains=request.GET['search_box'])
-    return render(request, "results.html", {"practices": practices,"doctors": doctors})
+    query=request.GET['search_box']
+    practices = MedicalPractice.objects.filter(name__icontains=query)
+    doctors = Doctor.objects.filter(Q(name__icontains=query) | Q(location__icontains=query))
+    # clinic = get_object_or_404(MedicalPractice, pk=id)
+    # doctors = Doctor.objects.filter(Q(name__icontains=query) | Q(practice__icontains=query) | Q(location__icontains=query))
+    return render(request, "results.html", {"practices": practices, "doctors": doctors})
     
 def your_view(request):
     if request.method == 'GET': search_query = request.GET('search_box', None)
+
+# def do_search(request):
+
+
+#     return render(request, "medical_practice.html", {"doctors": doctors})
 
 # def do_search(request):
 #     # medicalPractice = Doctor.objects.filter(name__icontains=query_string, address__icontains=query_string==request.GET['q'])

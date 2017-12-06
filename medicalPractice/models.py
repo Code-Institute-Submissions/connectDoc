@@ -6,6 +6,7 @@ class MedicalPractice(models.Model):
     name = models.CharField(max_length=254, default='')
     description = models.TextField()
     address = models.TextField(max_length=254, default='')
+    location = models.CharField(max_length=100)
     position = GeopositionField(blank=True)
     
     def __str__(self):
@@ -17,7 +18,8 @@ class Doctor(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(upload_to='images')
-    practice = models.ForeignKey(MedicalPractice, blank=False)
+    location = models.CharField(max_length=100)
+    practice = models.ForeignKey(MedicalPractice, blank=False, related_name='doctors')
 
     def __str__(self):
         return self.name

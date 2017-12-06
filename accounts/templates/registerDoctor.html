@@ -10,8 +10,14 @@
         {% csrf_token %}
         {{ form | as_bootstrap }}
         
+        <hr>
+        
+        {{ typeForm | as_bootstrap }}
+        
         <button type="submit"> Register </button>
          
     </form>
+    
+    
     
 {% endblock %}

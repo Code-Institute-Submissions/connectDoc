@@ -14,7 +14,8 @@ from django.template.loader import get_template
 stripe.api_key = settings.STRIPE_SECRET
 
 @login_required()
-def checkout(request):
+def checkout(request, id):
+    doctor = get_object_or_404(Doctor, pk=id)
     if request.method=="POST":
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)

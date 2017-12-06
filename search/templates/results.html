@@ -1,11 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
+
+    <div class="container">
+        <div class='row'>
+            <div class='col-md-offset-1 col-md-11'>
+                <form action="{% url 'search' %}" method="get" style="margin: 10" id="search_light">
+                    <input id ="search_box" type='text' name="search_box" style="width:500px; height: 30px;" placeholder="Search Clinic, Doctor, Location... ">
+                    <button type="submit" class="btn btn-default">Search</button>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
     <table class="table">
         <thead>
         <tr>
             <th>Image</th>
             <th>Name</th>
             <th>Description</th>
+            <th>Location</th>
             <th>Price</th>
             <th>Schedule</th>
         </tr>
@@ -17,14 +32,12 @@
                 <td><img height="100" width="100" src="http://via.placeholder.com/100x100"></td>
                 <td><a href="{% url 'practice_details' practice.id %}">{{ practice.name }}</a></td>
                 <td>{{ practice.description }}</td>
+                <td>{{ practice.address }}</td>
                 <td>{{ practice.price }}</td>
                 <td>
-                    <form method="post" action="{% url 'checkout' %}">
-                        {% csrf_token %}
-                        Quantity
-                        <input name='quantity' type="number" min="1" max="999">
-                        <button type="submit">Add</button>
-                    </form>
+                        <a href="{% url 'clinic' practice.id %}" type="submit" class="btn btn-primary">View Clinic</a>
+                       
+
                 </td>
             </tr>
         {% endfor %}
@@ -32,16 +45,13 @@
             {% for doctor in doctors %}
             <tr>
                 <td><img height="100" width="100" src="{{MEDIA_URL}}{{doctor.image}}"></td>
-                <td><a href="#">{{ doctor.name }} - {{ doctor.practice.name }}</a></td>
+                <td><a href="{% url 'practice_details' doctor.id  %}">{{ doctor.name }} </a><br>
+                <a href="{% url 'clinic' doctor.practice.id  %}">{{ doctor.practice.name }}</a></td>
                 <td>{{ doctor.description }}</td>
+                <td>{{ doctor.location }}</td>
                 <td>{{ doctor.price }}</td>
                 <td>
-                    <form method="post" action="{% url 'checkout' %}">
-                        {% csrf_token %}
-                        Quantity
-                        <input name='quantity' type="number" min="1" max="999">
-                        <button type="submit">Add</button>
-                    </form>
+                <a href="{% url 'practice_details' doctor.id  %}" type="button" class="btn btn-success"> View Doctor</a>
                 </td>
             </tr>
         {% endfor %}
