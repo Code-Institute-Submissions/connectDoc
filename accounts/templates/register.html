@@ -1,23 +1,23 @@
 
 {% extends "base.html" %}
 {% load bootstrap_tags %}
-    
+
     {% block content %}
     <h1> Don't have an account yet?  </h1>
-    
-    <form method ="POST">
-        
+
+    <form method ="POST", enctype="multipart/form-data">
+
         {% csrf_token %}
         {{ form | as_bootstrap }}
-        
+
         <hr>
-        
+
         {{ typeForm | as_bootstrap }}
-        
+
         <button type="submit"> Register </button>
-         
+
     </form>
-    
-    
-    
+
+
+
 {% endblock %}

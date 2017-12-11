@@ -1,6 +1,6 @@
 from django.db import models
 from medicalPractice.models import Doctor, Patient
-from datetime import time 
+from datetime import time
 
 TIME_SLOTS=(
     (time(8, 00, 00), u'8:00 AM'),
@@ -51,22 +51,13 @@ TIME_SLOTS=(
     (time(19, 15, 00), u'7:15 PM'),
     (time(19, 30, 00), u'7:30 PM'),
     (time(19, 45, 00), u'7:45 PM'),
-    
+
     )
 
-# Create your models here.
+#Create your models here.
 class Booking(models.Model):
     doctor = models.ForeignKey(Doctor)
     patient = models.ForeignKey(Patient)
     date = models.DateField()
     time = models.TimeField(choices= TIME_SLOTS)
-    
-    
-    
-# class Foo(models.Model):
-#     GENDER_CHOICES = (
-#     (M = "MALE"), 
-#     (F = "FEMALE"), 
-    
-# # )
-# name=models.CharField(max_length=60)gender=models.CharField(max_length=2,choices=GENDER_CHOICES)
+

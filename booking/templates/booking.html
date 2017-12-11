@@ -1,12 +1,37 @@
 {% extends "base.html" %}
 
+{% load bootstrap_tags %}
+
+
+
 
 {% block content %}
-<p> Book your Appointment here </p>
-<h1> CALENDAR TO GO HERE </h1>
+
+         <div class="form-group col-md-offset-2 col-md-7 col-md-offset-3'">
+<h1> Book your Appointment here </h1>
+
+    <form role="form" method="post" id="booking-form" action="{% url 'checkout' %}">
+             {{ booking_form|as_bootstrap }}
+             <p>Date: <input type="text" id="datepicker"></p>
+
+<p>
+<label>Pickup Date/Time
+<input type="datetime-local" name="booking_form" required>
+</label>
+</p>
 
 
+             <!--The Doctor is {{doctor.name}}<br>-->
+             <!--The Doctor description is {{doctor.description}}<br>-->
+             <!--The Doctor location {{doctor.location}}<br>-->
+             <!--The Doctor price {{doctor.price}}<br>-->
+             <!--The User is {{doctor.user}}-->
 
-<p><a href="{% url 'checkout' doctor.id %}">A date & a time</a></p>
+    </form>
+
+ <td>
+     <a href="{% url 'checkout' doctor.id %}" type="submit" class="btn btn-primary">Submit Booking</a>
+</td>
+ </div>
 
 {% endblock %}

@@ -12,19 +12,18 @@ from django.db.models import Q
 # def all_doctors(request):
 #     medicalPractice = Doctor.objects.all()
 #     return render(request, "medical_practice.html", {"medicalPractice": medicalPractice})
-    
-    
+
+
 def practice_details(request, id):
     this_doctor = get_object_or_404(Doctor, pk=id)
-    practices = get_object_or_404(MedicalPractice, pk=id)
-    return render(request, "practice_detail.html", {"doctor" : this_doctor, "practices": practices})
-    
-    
-def all_docs(request): 
-    doctors = Doctor.objects.all()
-    return render (request, 'all_docs.html', {'doctors': doctors})  
-    
-    
-    
+    return render(request, "practice_detail.html", {"doctor" : this_doctor})
 
-    
+
+def all_docs(request):
+    doctors = Doctor.objects.all()
+    return render (request, 'all_docs.html', {'doctors': doctors})
+
+
+
+
+

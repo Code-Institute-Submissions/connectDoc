@@ -1,9 +1,93 @@
 body {
    font-family: Arial;
+   color: black;
    padding-top: 10px;
+   padding-bottom: 200px;
+
+}
+
+navbar-brand {
+    color: black;
+
 }
 
 
+h1,
+h2,
+h4 {
+    color: black;
+    font-family: 'Lobster', cursive;
+    /*position: absolute;*/
+    /*margin-top: 200px;*/
+    /*margin-bottom: 400px;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*margin: auto;*/
+
+}
+
+#mainBtn {
+    border-bottom: 1px solid rgba(33,37,41,.1);
+    background-color: white;
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    transition: all .2s;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+}
+
+
+
+
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+    color: #fff;
+    background-color: #ee4b28!important;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+.btn:focus, .btn:hover {
+    text-decoration: none;
+}
+
+
+
+
+
+
+.bg {
+    background-image: url("https://shreya22dhumal.files.wordpress.com/2015/09/hospital.jpg");
+    position: relative;
+    height: 100%;
+
+     /*Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 footer {
    padding-top: 40px;
@@ -11,16 +95,27 @@ footer {
    margin-top: 200px; /* negative value of footer height */
 
    border-top: 1px solid #ededed ;
-   color: #A9A9A9 ;
+   color: black ;
 }
 
-footer {
-  position: relative;
-  margin-top: 200px; /* negative value of footer height */
-  height: 0px;
-  clear:both;
-  padding-top:20px;
+
+#footer {
+    height: 0px;
+    padding: 50px;
+    margin-top: 400px;
+    text-align: center;
+    color: black;
+
+
 }
+
+/*footer {*/
+/*  position: relative;*/
+   /* negative value of footer height */
+/*  height: 0px;*/
+/*  clear:both;*/
+/*  padding-top:20px;*/
+/*}*/
 
 
 

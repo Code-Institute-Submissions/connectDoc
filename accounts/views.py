@@ -11,23 +11,23 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 def get_index(request):
     return render(request, 'index.html')
-    
+
 # Create your views here.
 # def logout(request):
 #     auth.logout(request)
 #     messages.success(request, 'You have successfully logged out')
 #     return redirect(blogposts)
-    
+
 def logout(request):
     auth.logout(request)
     messages.success(request, 'You have successfully logged out')
     return redirect("index")
-    
-    
+
+
 def login(request):
     if request.method=="POST":
         form=UserLoginForm(request.POST)
-        
+
         if form.is_valid():
             user = auth.authenticate(username=form.cleaned_data['username'],
                                      password=form.cleaned_data['password'])
@@ -42,54 +42,58 @@ def login(request):
                     return redirect(profile)
             else:
                 form.add_error(None, "Your username or password was not recognised")
-            
+
     else:
         form = UserLoginForm()
-    
+
     return render(request, "login.html", {'form': form})
 
 def registerDoctor(request):
     if request.method=="POST":
-        form = UserRegistrationForm(request.POST)
-        typeForm = DoctorRegistrationForm(request.POST)
-        
-        if typeForm.is_valid():
-            user = userForm.save()
-            doctor = typeForm.save(commit=False)
+        user_form = UserRegistrationForm(request.POST, request.FILES    )
+        usertype_form = DoctorRegistrationForm(request.POST, request.FILES)
+
+        if user_form.is_valid() and usertype_form.is_valid():
+            user = user_form.save()
+            doctor = usertype_form.save(commit=False)
             doctor.user = user
             doctor.save()
-            
-            user = auth.authenticate(username=form.cleaned_data['username'],
-                                     password=form.cleaned_data['password1'])
-    
+
+            user = auth.authenticate(username=user_form.cleaned_data['username'],
+                                     password=user_form.cleaned_data['password1'])
+
             if user is not None:
                 auth.login(request, user)
                 return redirect("index")
     else:
-        form= UserRegistrationForm()
-        typeForm = DoctorRegistrationForm()
-    
-    return render(request, "registerDoctor.html", {'form': form, 'typeForm': typeForm})
-    
+        user_form= UserRegistrationForm()
+        usertype_form = DoctorRegistrationForm()
+
+    return render(request, "register.html", {'form': user_form, 'typeForm': usertype_form})
+
 def registerPatient(request):
     if request.method=="POST":
-        form = UserPatientRegistrationForm(request.POST)
-        
-        if form.is_valid():
-            user = form.save()
-            
-            user = auth.authenticate(username=form.cleaned_data['username'],
-                                     password=form.cleaned_data['password1'])
-                                     
+        user_form = UserRegistrationForm(request.POST)
+        usertype_form = PatientRegistrationForm(request.POST)
+
+        if user_form.is_valid() and usertype_form.is_valid():
+            user = user_form.save()
+            patient = usertype_form.save(commit=False)
+            patient.user = user
+            patient.save()
+
+            user = auth.authenticate(username=user_form.cleaned_data['username'],
+                                     password=user_form.cleaned_data['password1'])
+
             if user is not None:
                 auth.login(request, user)
                 return redirect("index")
     else:
-        userForm= UserRegistrationForm()
-        typeForm = PatientRegistrationForm()
-    
-    return render(request, "register.html", {'userForm': userForm, 'typeForm': typeForm})
-    
+        user_form= UserRegistrationForm()
+        usertype_form = PatientRegistrationForm()
+
+    return render(request, "register.html", {'form': user_form, 'typeForm': usertype_form})
+
 @login_required()
 def profile(request):
     return render(request, 'profile.html')
