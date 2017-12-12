@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['connectdoc-oanacozma.c9users.io', 'connectdoc.heroku.com' ]
+ALLOWED_HOSTS = ['connectdoc-oanacozma.c9users.io', 'connectdoc.herokuapp.com' ]
 
 
 # Application definition
