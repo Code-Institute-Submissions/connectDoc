@@ -1,16 +1,52 @@
 body {
-   font-family: Arial;
-   color: black;
-   padding-top: 10px;
-   padding-bottom: 200px;
+    /*background-image: linear-gradient(#04519b, #044687 60%, #033769);*/
+    background-color: #000066;
+    font-family: Arial;
+    color: white;
+    padding-top: 10px;
+    /*padding-bottom: 200px;*/
 
 }
 
-navbar-brand {
-    color: black;
-
+a {
+    color: #339933;
+    text-decoration: none;
 }
 
+.navbar-inverse {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.navbar a h2 {
+    color: white;
+    /*font-weight: 900;*/
+    text-shadow: 1px 1px 1px black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.navbar a h1 {
+    color: white;
+    /*font-weight: 900;*/
+    text-shadow: 1px 1px 1px black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+    background-color: transparent;
+}
+
+.caret {
+    margin-left: 10px;
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
+    background-color: transparent;
+}
 
 h1,
 h2,
@@ -24,6 +60,28 @@ h4 {
     /*right: 0;*/
     /*margin: auto;*/
 
+}
+
+
+.mainpage {
+    text-align: center;
+}
+
+.mainpage h2 {
+    font-size: 60px;
+    color: #339933;
+    text-shadow: 1px 1px 1px black;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.mainpage h4 {
+    font-size: 40px;
+    color: #339933;
+    text-shadow: 1px 1px 1px black;
+    margin-top: 50px;
+    font-family: 'PT Sans', sans-serif;
 }
 
 #mainBtn {
@@ -43,18 +101,18 @@ h4 {
     z-index: 1030;
 }
 
-.navbar {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: .5rem 1rem;
-}
+/*.navbar {*/
+/*    position: relative;*/
+/*    display: -ms-flexbox;*/
+/*    display: flex;*/
+/*    -ms-flex-wrap: wrap;*/
+/*    flex-wrap: wrap;*/
+/*    -ms-flex-align: center;*/
+/*    align-items: center;*/
+/*    -ms-flex-pack: justify;*/
+/*    justify-content: space-between;*/
+/*    padding: .5rem 1rem;*/
+/*}*/
 
 
 
@@ -76,18 +134,26 @@ h4 {
 
 
 
-
-
-.bg {
-    background-image: url("https://shreya22dhumal.files.wordpress.com/2015/09/hospital.jpg");
-    position: relative;
-    height: 100%;
+/*.bg {*/
+/*    background-image: url("https://shreya22dhumal.files.wordpress.com/2015/09/hospital.jpg");*/
+/*    position: relative;*/
+/*    height: 100%;*/
 
      /*Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+/*    background-position: center;*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+
+/*    opacity: 100px;*/
+/*    margin-top: 25px;*/
+/*    font-size: 21px;*/
+/*    text-align: center;*/
+/*    -webkit-transition: opacity 2s ease-in;*/
+/*    -moz-transition: opacity 2s ease-in;*/
+/*    -o-transition: opacity 2s ease-in;*/
+/*    -ms-transition: opacity 2s ease-in;*/
+/*    transition: opacity 2s ease-in;*/
+/*}*/
 
 footer {
    padding-top: 40px;
@@ -119,11 +185,11 @@ footer {
 
 
 
-#search_light{
-    position: absolute;
-    left: 10%;
-    top: 45%;
-}
+/*#search_light{*/
+/*    position: absolute;*/
+/*    left: 10%;*/
+/*    top: 45%;*/
+/*}*/
 
 
 #search_light input[type="text"] {
@@ -150,3 +216,8 @@ footer {
 #search_light input[type="text"]:focus {
     width: 150px;
     }
+
+footer {
+    bottom: 0;
+    width: 100%;
+}

@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['connectdoc-oanacozma.c9users.io' ]
+ALLOWED_HOSTS = ['connectdoc-oanacozma.c9users.io', 'connectdoc.heroku.com' ]
 
 
 # Application definition
@@ -138,7 +138,7 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 GEOPOSITION_GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY')
@@ -152,8 +152,8 @@ STRIPE_SECRET = os.getenv('STRIPE_SECRET_KEY')
 
 # SYSTEM_EMAIL="sales@djangomango.com"
 
-# EMAIL_USE_TLS = True       
-# EMAIL_HOST = 'smtp.gmail.com'      
-# EMAIL_PORT = 587     
-# EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')     
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 # EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
