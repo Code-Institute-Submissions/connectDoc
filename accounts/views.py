@@ -2,7 +2,7 @@
 from django.shortcuts import render, redirect, reverse, HttpResponseRedirect
 from django.contrib import messages, auth
 from .forms import UserLoginForm, UserRegistrationForm
-from medicalPractice.forms import DoctorRegistrationForm, PatientRegistrationForm
+from medicalPractice.forms import DoctorRegistrationForm, PatientRegistrationForm, ClinicRegistrationForm
 from medicalPractice.models import Doctor, Patient
 from django.contrib.auth.decorators import login_required
 # from blog.views import blogposts
@@ -93,6 +93,31 @@ def registerPatient(request):
         usertype_form = PatientRegistrationForm()
 
     return render(request, "register.html", {'form': user_form, 'typeForm': usertype_form})
+
+
+def registerClinic(request):
+    if request.method=="POST":
+        user_form = UserRegistrationForm(request.POST, request.FILES    )
+        usertype_form = ClinicRegistrationForm(request.POST, request.FILES)
+
+        if user_form.is_valid() and usertype_form.is_valid():
+            user = user_form.save()
+            clinic = usertype_form.save(commit=False)
+            clinic.user = user
+            clinic.save()
+
+            user = auth.authenticate(username=user_form.cleaned_data['username'],
+                                     password=user_form.cleaned_data['password1'])
+
+            if user is not None:
+                auth.login(request, user)
+                return redirect("index")
+    else:
+        user_form= UserRegistrationForm()
+        usertype_form = ClinicRegistrationForm()
+
+    return render(request, "register.html", {'form': user_form, 'typeForm': usertype_form})
+
 
 @login_required()
 def profile(request):

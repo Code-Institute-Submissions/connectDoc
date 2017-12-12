@@ -36,6 +36,15 @@ class Patient(models.Model):
         return self.user.last_name + ", " + self.user.first_name
 
 
+class Clinic(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="Clinic")
+    name = models.CharField(max_length=254, default='')
+    address = models.CharField(max_length=254, default='')
+
+    def __str__(self):
+        return self.user.last_name + ", " + self.user.first_name
+
+
 
 class DoctorImage(models.Model):
     medicalPractice = models.ForeignKey(Doctor, related_name='images')
