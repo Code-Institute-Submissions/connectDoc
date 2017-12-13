@@ -47,8 +47,10 @@
             {% for doctor in doctors %}
             <tr>
                 <td><img height="100" width="100" src="{{MEDIA_URL}}{{doctor.image}}"></td>
+
                 <td><a href="{% url 'practice_details' doctor.id  %}">{{ doctor.name }} </a><br>
                 <a href="{% url 'clinic' doctor.practice.id  %}">{{ doctor.practice.name }}</a></td>
+
                 <td>{{ doctor.description }}</td>
                 <td>{{ doctor.location }}</td>
                 <td>{{ doctor.price }}</td>
