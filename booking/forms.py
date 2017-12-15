@@ -9,11 +9,11 @@ class BookingForm(forms.Form):
     DAY_CHOICES = [(i, i,) for i in range(1, 8)]
     TIME_CHOICES = [(i, i,) for i in range(1, 24)]
 
-    date = forms.DateField(initial = datetime.date.today)
-    date.widget.attrs = {'class': 'datepicker'}
-    time = forms.TimeField()
-    booking_month = forms.ChoiceField(label="Month", choices=MONTH_CHOICES, required=False)
+    # date = forms.DateField(initial = datetime.date.today)
+    # date.widget.attrs = {'class': 'datepicker'}
+    # time = forms.TimeField()
     booking_year = forms.ChoiceField(label="Year", choices=YEAR_CHOICES, required=False)
+    booking_month = forms.ChoiceField(label="Month", choices=MONTH_CHOICES, required=False)
     booking_day = forms.ChoiceField(label="Day", choices=DAY_CHOICES, required=False)
     booking_time = forms.ChoiceField(label="Time", choices=TIME_CHOICES, required=False)
 

@@ -1,1 +1,1 @@
-web: gunicorn connectdoc.wsgi:application
+web: gunicorn connectDOC.wsgi:application
