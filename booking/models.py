@@ -61,3 +61,7 @@ class Booking(models.Model):
     date = models.DateField()
     time = models.TimeField(choices= TIME_SLOTS)
 
+
+    # def __str__(self):
+    #     return self.booking
+

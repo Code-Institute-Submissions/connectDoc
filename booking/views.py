@@ -16,5 +16,9 @@ def booking(request, id):
     else:
         booking_form = BookingForm()
 
+    # booking = booking_form.save()
+
+
+
 
     return render(request, "booking.html", {'doctor': doctor, 'booking_form': booking_form})

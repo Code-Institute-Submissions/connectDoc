@@ -1,13 +1,16 @@
 
      ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
     '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
+    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--,
     '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
      `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+    -----------------------------------------------------------------
 
 
-Hi there! Welcome to Cloud9 IDE!
+ConnectDoc
+
+This is a Django project aimed at allowing patients looking for various medical services to search online, pick and book appointments with their preferred clinics or doctors in their area.
+
 
 To get you started, create some files, play with the terminal,
 or visit http://docs.c9.io for our documentation.

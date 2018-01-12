@@ -1,29 +1,29 @@
 body {
     /*background-image: linear-gradient(#04519b, #044687 60%, #033769);*/
-    background-color: white;
+    background-color:  #e6f7ff;
     font-family: Arial;
-    color: blue;
+    color: black;
     padding-top: 10px;
     /*padding-bottom: 200px;*/
 
 }
-.bg {
-    background-image: url(https://shreya22dhumal.files.wordpress.com/2015/09/hospital.jpg);
-    position: relative;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 100px;
-    margin-top: 25px;
-    font-size: 21px;
-    text-align: center;
-    -webkit-transition: opacity 2s ease-in;
-    -moz-transition: opacity 2s ease-in;
-    -o-transition: opacity 2s ease-in;
-    -ms-transition: opacity 2s ease-in;
-    transition: opacity 2s ease-in;
-}
+/*.bg {*/
+/*    background-image: url(https://shreya22dhumal.files.wordpress.com/2015/09/hospital.jpg);*/
+/*    position: relative;*/
+/*    height: 100%;*/
+/*    background-position: center;*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+/*    opacity: 100px;*/
+/*    margin-top: 25px;*/
+/*    font-size: 21px;*/
+/*    text-align: center;*/
+/*    -webkit-transition: opacity 2s ease-in;*/
+/*    -moz-transition: opacity 2s ease-in;*/
+/*    -o-transition: opacity 2s ease-in;*/
+/*    -ms-transition: opacity 2s ease-in;*/
+/*    transition: opacity 2s ease-in;*/
+/*}*/
 
 a {
     color: blue;
@@ -37,18 +37,18 @@ a {
 }
 
 .navbar a h2 {
-    color: blue;
+    color: green;
     /*font-weight: 900;*/
     /*text-shadow: 1px 1px 1px black;*/
-    font-family: 'Roboto', sans-serif;
+    font-family: Times New Roman;
     font-size: 20px;
 }
 
 .navbar a h1 {
-    color: blue;
+    color: green;
     /*font-weight: 900;*/
     /*text-shadow: 1px 1px 1px black;*/
-    font-family: 'Roboto', sans-serif;
+    font-family: Times New Roman;
     font-size: 30px;
     margin-top: 10px;
 }
@@ -69,7 +69,7 @@ h1,
 h2,
 h4 {
     color: blue;
-    font-family: 'Roboto', sans-serif;
+    font-family: Times New Roman;
     /*position: absolute;*/
     /*margin-top: 200px;*/
     /*margin-bottom: 400px;*/
@@ -86,19 +86,19 @@ h4 {
 
 .mainpage h2 {
     font-size: 60px;
-    color: blue;
-    text-shadow: 1px 1px 1px black;
+    color:  #0080ff;
+    text-shadow: 1px 1px 1px blue;
     margin-top: 50px;
     margin-bottom: 100px;
-    font-family: 'Roboto', sans-serif;
+    font-family: Times New Roman;
 }
 
 .mainpage h4 {
     font-size: 40px;
-    color: blue;
-    text-shadow: 1px 1px 1px black;
+    color: #4da6ff;
+    text-shadow: 1px 1px 1px blue;
     margin-top: 50px;
-    font-family: 'Roboto', sans-serif;
+    font-family: Times New Roman;
 }
 
 #mainBtn {
@@ -193,21 +193,6 @@ footer {
 }
 
 
-/*footer {*/
-/*  position: relative;*/
-   /* negative value of footer height */
-/*  height: 0px;*/
-/*  clear:both;*/
-/*  padding-top:20px;*/
-/*}*/
-
-
-
-/*#search_light{*/
-/*    position: absolute;*/
-/*    left: 10%;*/
-/*    top: 45%;*/
-/*}*/
 
 
 #search_light input[type="text"] {
@@ -232,10 +217,7 @@ footer {
 
     }
 
-/*#search_box {*/
-/*    width: 550px;*/
-/*    height: 50px;*/
-/*}*/
+
 #search_light input[type="text"]:focus {
     width: 150px;
 
