@@ -3,22 +3,47 @@
 {% load bootstrap_tags %}
 
     {% block content %}
-    <h1> Don't have an account yet?  </h1>
 
-    <form method ="POST", enctype="multipart/form-data">
 
-        {% csrf_token %}
+ <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <center> <p> <br> Haven't got an account yet? </p>
+                       <h2> Simply register with us as </h2>
 
-        {{ form | as_bootstrap }}
+                <button class="social-signin facebook">PATIENT </button>
+                <button class="social-signin twitter">DOCTOR</button>
+                <button class="social-signin google">MEDICAL PRACTICE</button>
 
-        <hr>
+            </center>
+        </div>
 
-        {{ typeForm | as_bootstrap }}
+            <div class='mainpage'>
+                <div class="row">
+                    <div class="col-md-6">
+<center>
 
-        <button type="submit"> Register </button>
 
-    </form>
+                        <form method ="POST", enctype="multipart/form-data">
 
+                            {% csrf_token %}
+
+                            {{ form | as_bootstrap }}
+
+                            <hr>
+
+                            {{ typeForm | as_bootstrap }}
+
+                            <button type="submit"  class="btn btn-primary"> Register </button>
+
+                        </form>
+</center>
+
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
 
 
 {% endblock %}

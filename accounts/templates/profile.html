@@ -2,17 +2,26 @@
 {% load bootstrap_tags %}
 
 {% block content %}
-    <h2>Success!</h2>
-    <p>You are logged in as {{ user.email }} </p>
-        <img src="#" style="width:100px; height: 100px; background-color: #12ABB2; color: #ffffff;" class="img-circle">
+
+ <div class="container">
+    <div class="row">
+        <div class="col-md-8">
+                   <h2>Success!</h2>
+            <p>You are logged in as {{ user.email }} </p>
+                <img src="#" style="width:100px; height: 100px; background-color: #12ABB2; color: #ffffff;" class="img-circle">
 
 
-    {% if user.Doctor %}
-        <p>You are a doctor at {{ user.Doctor.practice.name}}</p>
-    {% endif %}
+            {% if user.Doctor %}
+                <p>You are a doctor at {{ user.Doctor.practice.name}}</p>
+            {% endif %}
 
-    {% if user.Patient %}
-        <p>You are a patient born {{ user.Patient.date_of_birth }}</p>
-    {% endif %}
+            {% if user.Patient %}
+                <p>You are a patient born {{ user.Patient.date_of_birth }}</p>
+            {% endif %}
+
+
+        </div>
+    </div>
+</div>
 
 {% endblock %}

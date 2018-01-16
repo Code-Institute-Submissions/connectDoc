@@ -1,25 +1,73 @@
-
 {% extends "base.html" %}
+{% load static from staticfiles %}
+
 {% load bootstrap_tags %}
 
-    {% block content %}
-
-    <h1> Log in </h1>
-    <form method = "POST">
-        {% csrf_token %}
-
-        {{ form | as_bootstrap }}
-        <p><a href="{% url 'password_reset' %}">Forgot my password</a></p>
-        <button type="submit"> Log in </button>
-
-    </form>
-   <p>
+{% block content %}
 
 
-<label>
-<input type="checkbox"> Remember me
-</label>
-</p>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-4">
+
+            <div class="right">
+
+
+                <span class="loginwith">Sign in with<br>social network</span>
+
+                <button class="social-signin facebook">Log in with facebook</button>
+                <button class="social-signin twitter">Log in with Twitter</button>
+                <button class="social-signin google">Log in with Google+</button>
+                </div>
+        </div>
+        <center>
+         <div class="col-md-5">
+
+              <div class="left">
+                    <label>Have you got an account already?</label>
+
+                    <span class="sign-in">  Log in to book <br> an appointment with us </span>
+                    <form method = "POST">
+                        {% csrf_token %}
+
+                        {{ form | as_bootstrap }}
+                        <p><a href="{% url 'password_reset' %}">Forgot my password</a></p>
+                        <button type="submit" class="btn btn-primary"> Sign in </button>
+                    </form>
+
+                    <p>
+                        <label><input type="checkbox"> Remember me</label>
+                    </p>
+            </div>
+          </div>
+        </center>
+
+
+        <div class="col-md-3">
+            <div class="middle">
+                <span class="register-as">Register <br> with us </span>
+
+                 <button class="social-signin facebook">PATIENT </button>
+                <button class="social-signin twitter">DOCTOR</button>
+                <button class="social-signin google">MEDICAL PRACTICE</button>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
 
 
 {% endblock %}

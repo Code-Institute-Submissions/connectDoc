@@ -6,35 +6,28 @@
 {% block content %}
 
  <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="picture">
+                <img src="static/images/doct.png">
+            </div>
+        </div>
 
-            <div class="row">
-
-                <div class="col-md-6">
-                    <div class="picture">
-
-                                <img src="static/images/doct.png" alt="map">
-
-                            </div>
-                    </div>
-
-<div class='mainpage'>
+            <div class='mainpage'>
                 <div class="row">
+                    <div class="col-md-6">
 
-                                <div class="col-md-6">
+                        <h4> Where Doctors & Patients connect </h4>
+                        <h2> Book your appointment online</h2>
 
-            <h4> Where Doctors & Patients connect </h4>
-            <h2> Book your appointment online</h2>
-
-            <form action="{% url 'search' %}" method="get" style="margin: 10" id="search_light">
-                <input id ="search_box" type='text' name="search_box" style="width:500px; height: 70px;" placeholder="Search Clinic, Doctor, Location... ">
-
-            </form>
+                        <form action="{% url 'search' %}" method="get" style="margin: 10" id="search_light">
+                            <input id ="search_box" type='text' name="search_box" style="width:500px; height: 70px;" placeholder="Search Clinic, Doctor, Location... ">
+                        </form>
+                    </div>
                 </div>
             </div>
     </div>
-
-    </div>
-        </div>
+</div>
 
 
 

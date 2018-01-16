@@ -7,23 +7,98 @@ body {
     /*padding-bottom: 200px;*/
 
 }
-/*.bg {*/
-/*    background-image: url(https://shreya22dhumal.files.wordpress.com/2015/09/hospital.jpg);*/
-/*    position: relative;*/
-/*    height: 100%;*/
-/*    background-position: center;*/
-/*    background-repeat: no-repeat;*/
-/*    background-size: cover;*/
-/*    opacity: 100px;*/
-/*    margin-top: 25px;*/
-/*    font-size: 21px;*/
-/*    text-align: center;*/
-/*    -webkit-transition: opacity 2s ease-in;*/
-/*    -moz-transition: opacity 2s ease-in;*/
-/*    -o-transition: opacity 2s ease-in;*/
-/*    -ms-transition: opacity 2s ease-in;*/
-/*    transition: opacity 2s ease-in;*/
-/*}*/
+
+/*--------------------log in -------------*/
+.left .sign-in {
+  display: block;
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: #c70f15;
+  text-align: center;
+}
+h1 {
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  font-size: 28px;
+}
+
+.right {
+  padding: 40px;
+  width: 300px;
+  height: 400px;
+  background: url('https://goo.gl/YbktSj');
+  /*background-size: cover;*/
+  /*background-position: center;*/
+  border-radius: 0 2px 2px 0;
+}
+
+.right .loginwith {
+  display: block;
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: #FFF;
+  text-align: center;
+}
+
+button.social-signin {
+  margin-bottom: 20px;
+  width: 220px;
+  height: 36px;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+button.social-signin:hover,
+button.social-signin:focus {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
+}
+
+button.social-signin:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
+}
+
+button.social-signin.facebook {
+  background: #32508E;
+}
+
+button.social-signin.twitter {
+  background: #55ACEE;
+}
+
+button.social-signin.google {
+  background: #c70f15;
+}
+
+.middle {
+  background: url('https://goo.gl/YbktSj');
+  top: 0;
+  left: 0;
+  padding: 40px;
+  width: 300px;
+  height: 400px;
+}
+
+.middle .register-as {
+  display: block;
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: #FFF;
+  text-align: center;
+}
+
+/*------------register ----*/
+
+.register h1 {
+
+}
+
 
 a {
     color: blue;
@@ -42,6 +117,7 @@ a {
     /*text-shadow: 1px 1px 1px black;*/
     font-family: Times New Roman;
     font-size: 20px;
+    margin-right: 20px;
 }
 
 .navbar a h1 {
@@ -51,6 +127,7 @@ a {
     font-family: Times New Roman;
     font-size: 30px;
     margin-top: 10px;
+    margin-left: 120px;
 }
 
 .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
@@ -68,14 +145,8 @@ a {
 h1,
 h2,
 h4 {
-    color: blue;
+    color: #0099cc;
     font-family: Times New Roman;
-    /*position: absolute;*/
-    /*margin-top: 200px;*/
-    /*margin-bottom: 400px;*/
-    /*left: 0;*/
-    /*right: 0;*/
-    /*margin: auto;*/
 
 }
 
@@ -118,21 +189,6 @@ h4 {
     z-index: 1030;
 }
 
-/*.navbar {*/
-/*    position: relative;*/
-/*    display: -ms-flexbox;*/
-/*    display: flex;*/
-/*    -ms-flex-wrap: wrap;*/
-/*    flex-wrap: wrap;*/
-/*    -ms-flex-align: center;*/
-/*    align-items: center;*/
-/*    -ms-flex-pack: justify;*/
-/*    justify-content: space-between;*/
-/*    padding: .5rem 1rem;*/
-/*}*/
-
-
-
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
     color: #fff;
@@ -150,27 +206,6 @@ h4 {
 
 
 
-
-/*.bg {*/
-/*    background-image: url("https://shreya22dhumal.files.wordpress.com/2015/09/hospital.jpg");*/
-/*    position: relative;*/
-/*    height: 100%;*/
-
-     /*Center and scale the image nicely */
-/*    background-position: center;*/
-/*    background-repeat: no-repeat;*/
-/*    background-size: cover;*/
-
-/*    opacity: 100px;*/
-/*    margin-top: 25px;*/
-/*    font-size: 21px;*/
-/*    text-align: center;*/
-/*    -webkit-transition: opacity 2s ease-in;*/
-/*    -moz-transition: opacity 2s ease-in;*/
-/*    -o-transition: opacity 2s ease-in;*/
-/*    -ms-transition: opacity 2s ease-in;*/
-/*    transition: opacity 2s ease-in;*/
-/*}*/
 
 footer {
    padding-top: 40px;
