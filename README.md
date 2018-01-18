@@ -19,7 +19,7 @@ The search function will compare the result you are searching for with what you 
 
 
 <h2> Live Demo </h2>
-Follow this link to view the deployed version of the web app https://dashboard.heroku.com/apps/stream3project
+Follow this link to view the deployed version of the web app https://stream3project.herokuapp.com/
 
 <h2> Built with: </h2>
 
@@ -122,13 +122,14 @@ export DEBUG='True'
 export STRIPE_PUBLISHABLE_KEY=''
 export STRIPE_SECRET_KEY=''
 
-<!--export EMAIL_HOST_USER='your@gmail.com'-->
-<!--export EMAIL_HOST_PASSWORD='yourPassword'-->
+export EMAIL_HOST_USER='your@gmail.com'
+export EMAIL_HOST_PASSWORD='yourPassword'
 A new SECRET_KEY can be generated here
 Set up an account with Stripe here & input STRIPE_PUBLISHABLE_KEY & STRIPE_SECRET_KEY
 Create email address with gmail & input your credentials
 Go to settings.py, change the following(lines 177-205):
-# TO RUN LOCALLY HAVE THESE TWO UNCOMMENTED:
+
+TO RUN LOCALLY HAVE THESE TWO UNCOMMENTED:
 
  STATIC_URL = '/static/'
  MEDIA_URL = '/media/'
@@ -213,7 +214,7 @@ The App should run on your browser - note that there will be no products/blog po
 Log in to the admin panel by going to '127.0.0.1:8000/admin' & log in using the credentials you created for the superuser
 You can add products/categories & blog posts from here
 
-<h4> Running the tests </h4>
+<h2> Running the tests </h2>
 Automated tests can be viewed in the tests.py file within the separate Apps. To run the tests, in your terminal navigate to the folder with your project in, activate your virtual environment and type:
 
 $ python manage.py test <app name>
