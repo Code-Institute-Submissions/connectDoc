@@ -21,7 +21,8 @@ The search function will compare the result you are searching for with what you 
 <h2> Live Demo </h2>
 Follow this link to view the deployed version of the web app https://dashboard.heroku.com/apps/stream3project
 
-<h2> Built with: <h2>
+<h2> Built with: </h2>
+
 Django framework
 Python
 HTML
@@ -127,13 +128,13 @@ A new SECRET_KEY can be generated here
 Set up an account with Stripe here & input STRIPE_PUBLISHABLE_KEY & STRIPE_SECRET_KEY
 Create email address with gmail & input your credentials
 Go to settings.py, change the following(lines 177-205):
-# TO RUN LOCALLY HAVE THESE TWO UNCOMMENTED #
+# TO RUN LOCALLY HAVE THESE TWO UNCOMMENTED:
 
-# STATIC_URL = '/static/'
-# MEDIA_URL = '/media/'
+ STATIC_URL = '/static/'
+ MEDIA_URL = '/media/'
 
 
-# TO RUN ON HEROKU HAVE THESE UNCOMMENTED #
+ TO RUN ON HEROKU HAVE THESE UNCOMMENTED:
 
 AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
@@ -158,42 +159,42 @@ MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 To this:
 
-# TO RUN LOCALLY HAVE THESE TWO UNCOMMENTED #
+ TO RUN LOCALLY HAVE THESE TWO UNCOMMENTED
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 
-# TO RUN ON HEROKU HAVE THESE UNCOMMENTED #
+ TO RUN ON HEROKU HAVE THESE UNCOMMENTED
 
-# AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
-#         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-#         'Cache-Control': 'max-age=94608000',
-#     }
-
-
-# AWS_STORAGE_BUCKET_NAME = os.environ.get('BUCKET_NAME')
-# AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY')
-# AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-
-# AWS_S3_HOST = 's3-eu-west-1.amazonaws.com'
-# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+ AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+         'Cache-Control': 'max-age=94608000',
+     }
 
 
-# STATICFILES_LOCATION = 'static'
-# STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-# STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+ AWS_STORAGE_BUCKET_NAME = os.environ.get('BUCKET_NAME')
+ AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY')
+ AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 
-# MEDIAFILES_LOCATION = 'media'
-# MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-# DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+ AWS_S3_HOST = 's3-eu-west-1.amazonaws.com'
+ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+
+ STATICFILES_LOCATION = 'static'
+ STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+ STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+
+ MEDIAFILES_LOCATION = 'media'
+ MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 Also in settings.py change the following(lines 112-119):
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+ DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+     }
+ }
 
 DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL')) }
 To this:
@@ -205,13 +206,14 @@ DATABASES = {
     }
 }
 
-# DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL')) }
+ DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL')) }
 In the terminal: $ python manage.py migrate - this will apply migrations to your local sqlite database $ python manage.py createsuperuser - this will create admin support $ python manage.py runserver - should say starting development server..
 Go to your browser & type '127.0.0.1:8000' in the address bar
 The App should run on your browser - note that there will be no products/blog posts as you are running off your own blank database
 Log in to the admin panel by going to '127.0.0.1:8000/admin' & log in using the credentials you created for the superuser
 You can add products/categories & blog posts from here
-Running the tests
+
+<h4> Running the tests </h4>
 Automated tests can be viewed in the tests.py file within the separate Apps. To run the tests, in your terminal navigate to the folder with your project in, activate your virtual environment and type:
 
 $ python manage.py test <app name>
@@ -221,11 +223,6 @@ $ python manage.py test accounts - These will all PASS tests.py n the Accounts A
 Tests that the UserRegistrationForm validates properly when the correct information is supplied
 Tests that the form fails when one of the passwords has not been entered
 Tests that the form fails when the passwords to not match
-<!--$ python manage.py test cart - This will PASS tests.py in the Cart App:-->
 
-<!--Tests that the url for '/cart/' resolves to the 'cart' function in views.py-->
-<!--$ python manage.py test contact - These will both PASS tests.py in the Contact App:-->
-
-<!--Tests that the url for '/contact/' resolves to the 'contact' function in views.py-->
-<!--Tests that the view returns the correct status code-->
-<!--etc. etc.-->
+$ python3 manage.py test search - This will PASS tests.py in the Search App:
+Tests that the url for '/search/' resolves to the 'do_search' function in views.py
