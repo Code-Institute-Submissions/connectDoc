@@ -109,7 +109,7 @@ When running locally, SQLite database was used & static and media files were sto
 <h2> Installation </h2>
 Follow the below instructions to clone this project for Mac (commands will be slightly different for Windows)
 
-Go to folder you want to put the cloned project in your terminal & type: $ git clone https://github.com/kgmaxwell1990/urban-surf.git
+Go to folder you want to put the cloned project in your terminal & type: $ git clone https://github.com/cozmaoanna/connectDoc
 Create & Activate a new Virtual Environment in terminal: Create: $ python3 -m venv ~/virtualenvs/name_of_environment Activate: $ source ~/virtualenvs/name_of_environment/bin/activate
 Install the project dependancies: $ pip install -r requirements.txt
 Create env.sh file at the top level (this will contain all sensitive information) MAKE SURE IT IS IN THE .gitignore FILE
@@ -208,11 +208,7 @@ DATABASES = {
 }
 
  DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL')) }
-In the terminal: $ python manage.py migrate - this will apply migrations to your local sqlite database $ python manage.py createsuperuser - this will create admin support $ python manage.py runserver - should say starting development server..
-Go to your browser & type '127.0.0.1:8000' in the address bar
-The App should run on your browser - note that there will be no products/blog posts as you are running off your own blank database
-Log in to the admin panel by going to '127.0.0.1:8000/admin' & log in using the credentials you created for the superuser
-You can add products/categories & blog posts from here
+In the terminal: $ python manage.py migrate - this will apply migrations to your local sqlite database $ python manage.py createsuperuser - this will create admin support $ python manage.py runserver -  starting development server.
 
 <h2> Running the tests </h2>
 Automated tests can be viewed in the tests.py file within the separate Apps. To run the tests, in your terminal navigate to the folder with your project in, activate your virtual environment and type:
