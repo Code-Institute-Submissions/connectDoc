@@ -7,7 +7,7 @@
     -----------------------------------------------------------------
 
 
-ConnectDoc
+<h1> ConnectDoc </h1>
 
 This Ecommerce & Blog Web Application was built as a final project for the Code Institute's classroom bootcamp. The project is aimed at allowing patients looking for various medical services to search online, pick and book appointments with their preferred clinics or doctors in their area.
 
