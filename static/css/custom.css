@@ -179,6 +179,35 @@ h4 {
     transition: all .2s;
 }
 
+#search_light input[type="text"] {
+    /*background-image: url('searchicon.png');*/
+    background: url(http://i1078.photobucket.com/albums/w498/molenmaulana/search-white_zps878b551d.png) no-repeat 10px 6px #fcfcfc;
+    border: 1px solid #d1d1d1;
+    font:  14px Arial,Helvetica,Sans-serif;
+    color: #bebebe;
+    width: 200px;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+
+    }
+
+
+#search_light input[type="text"]:focus {
+    width: 150px;
+
+    }
+
+
 .fixed-top {
     position: fixed;
     top: 0;
@@ -212,6 +241,8 @@ footer {
 
    border-top: 1px solid #ededed ;
    color: black ;
+   bottom: 0;
+   width: 100%;
 }
 
 
@@ -225,42 +256,6 @@ footer {
 
 }
 
-
-
-
-#search_light input[type="text"] {
-    /*background-image: url('searchicon.png');*/
-    background: url(http://i1078.photobucket.com/albums/w498/molenmaulana/search-white_zps878b551d.png) no-repeat 10px 6px #fcfcfc;
-    border: 1px solid #d1d1d1;
-    font:  14px Arial,Helvetica,Sans-serif;
-    color: #bebebe;
-    width: 200px;
-    padding: 6px 15px 6px 35px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
-    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
-    -webkit-transition: all 0.7s ease 0s;
-    -moz-transition: all 0.7s ease 0s;
-    -o-transition: all 0.7s ease 0s;
-    transition: all 0.7s ease 0s;
-
-    }
-
-
-#search_light input[type="text"]:focus {
-    width: 150px;
-
-    }
-
-
-footer {
-    bottom: 0;
-    width: 100%;
-}
 
 h5, .h5 {
     font-size: 18px;
